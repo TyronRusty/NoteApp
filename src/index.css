@@ -11,3 +11,86 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.header{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+    /* the container class will help centering the notes on the screen*/
+.container{
+  max-width: none; /*thing is this will not go above the width given*/
+  margin-right: auto; /*margin will keep notes centered on the scree*/
+  margin-left: auto;
+  padding-right: 15px; /*padding prevents notes to be pushed on the edge of the screen*/
+  padding-left: 15px; /*padding add space bewteen of the screen and the notes*/
+}
+
+.notes-list{
+  display: grid; /*display the notes as a grid */
+  grid-gap: 1rem;
+/* the mixmax helps with the notes lenght so
+if i want to change it or make it smaller comparing to the screen i can
+it means fit has many columns as you can in a row and they can resize accordingly*/
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+/*this note new is for styling the speciale note */
+.note.new{
+  background-color:whitesmoke;
+  
+}
+textarea { /* this border will  move the expedable text area stuff*/
+border: none;
+resize: none;
+background-color: whitesmoke;
+}
+textarea:focus{ /*the change here will apply to any txt element that is not focus */
+outline:none;
+}
+.save{
+  background-color: gray;
+  border: none; /* this removes the border*/
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+.save:hover{
+  background-color: white;
+  cursor: pointer;
+}
+.note{
+  border: 1px solid #ccc; /* add a border around the note */
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap; /* this keeps the space that is add on the note, ie paragraphes*/
+  overflow: hidden;
+}
+.note-footer{
+  display: flex;
+  align-items: center; /*align the items to be at the center of the note*/
+  justify-content: space-between; /*this position the first child elemnt a the begining of the container
+  and the second at the end*/
+}
+.delete-icon{
+  cursor: pointer;
+}
+/*this search is the container added to the app.js  on top of the notlist */
+.search{
+display: flex;
+align-self: center;
+background-color:  rgb(252, 250, 250);;
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 1.5em;
+
+}
+.search input{
+  border: none;
+  background-color: rgb(252, 250, 250);
+}
+.search input:focus{
+  outline: none;
+}
